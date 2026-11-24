@@ -296,7 +296,8 @@ export async function createPartyRoom({ renderer, scene, camera, quality = 1, co
         disposers.push(() => row.geometry.dispose());
     }
 
-    const sign = createNameSign(config.recipientName, { color: pal.sign, height: SIGN.height, maxWidth: SIGN.maxWidth });
+    const signName = String(config.recipientName || 'EUODIA').trim().toUpperCase();
+    const sign = createNameSign(signName, { color: pal.sign, height: SIGN.height, maxWidth: SIGN.maxWidth });
     if (sign) {
         sign.mesh.position.set(LETTERS.x, SIGN.y, LETTERS.z);
         room.add(sign.mesh);

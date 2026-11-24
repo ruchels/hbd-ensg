@@ -3,520 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-    <!-- SEO and Title -->
-    <title>Interactive 3D Happy Birthday Experience</title>
-    <meta name="description" content="Design and share stunning, highly interactive 3D birthday greetings featuring dynamic 3D cakes, microphone-based candle blowing, and animated surprises!">
-    <meta name="theme-color" content="#0b0714">
-    <link rel="canonical" href="https://gubbitkeytoday.github.io/hbd-3d-craft/">
+    <title>Happy 20th Birthday, Euodia Natalina Siagian! ✨</title>
+    <meta name="description" content="A cinematic, dedicated 3D birthday celebration made exclusively with love for Euodia Natalina Siagian.">
+    <meta name="theme-color" content="#120616">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E">
 
-    <!-- Link previews (LINE, Facebook, X). Card data lives in the URL
-         fragment, which crawlers never see, so every link shares this card.
-         Thai first: most links are shared in Thai LINE chats. -->
+    <!-- Open Graph previews -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="HBD 3D Craft">
-    <meta property="og:locale" content="th_TH">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:title" content="มีเค้กวันเกิด 3 มิติรอคุณอยู่ 🎂">
-    <meta property="og:description" content="เปิดแล้วอธิษฐานก่อนเป่าเทียนนะ · A 3D birthday cake is waiting for you. Open it, make a wish, then blow out the candles.">
-    <meta property="og:url" content="https://gubbitkeytoday.github.io/hbd-3d-craft/">
-    <meta property="og:image" content="https://gubbitkeytoday.github.io/hbd-3d-craft/og-cover.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="เค้กวันเกิด 3 มิติพร้อมเทียนที่จุดอยู่ บนพื้นหลังสีเข้ม / A glowing 3D birthday cake with lit candles">
+    <meta property="og:site_name" content="Happy Birthday Euodia">
+    <meta property="og:title" content="Happy Birthday, Euodia Natalina Siagian! 💖">
+    <meta property="og:description" content="A little surprise made just for you. Open it, turn on the lights, and make a wish.">
+    <meta property="og:image" content="/photos/euodia-01.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="มีเค้กวันเกิด 3 มิติรอคุณอยู่ 🎂">
-    <meta name="twitter:description" content="เปิดแล้วอธิษฐานก่อนเป่าเทียนนะ · Open it, make a wish, then blow out the candles.">
-    <meta name="twitter:image" content="https://gubbitkeytoday.github.io/hbd-3d-craft/og-cover.jpg">
-    <meta name="twitter:image:alt" content="A glowing 3D birthday cake with lit candles">
+    <meta name="twitter:title" content="Happy Birthday, Euodia Natalina Siagian! 💖">
+    <meta name="twitter:description" content="A little surprise made just for you. Open it, turn on the lights, and make a wish.">
 
-    <!-- Self-hosted UI fonts (Outfit + Noto Sans Thai, ~59 KB, font-display:
-         swap). Card-only fonts load on demand from src/fonts.js. Icons are
-         inline SVG masks in src/styles/icons.css (no icon webfont). -->
+    <!-- Self-hosted UI fonts -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2">
     <link rel="stylesheet" href="/src/styles/fonts.css">
 </head>
 <body class="theme-neon-rose">
-    <!-- Creator icon sprite: inline SVG so the creator never waits on an icon font. -->
-    <svg class="cr-sprite" aria-hidden="true" focusable="false">
-        <symbol id="cr-i-cake" viewBox="0 0 24 24"><path d="M4 21h16M5 21v-7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7M5 16.5c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 5 0M12 12V8.5M12 6c.9-.9.9-1.9 0-3-.9 1.1-.9 2.1 0 3z"/></symbol>
-        <symbol id="cr-i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
-        <symbol id="cr-i-next" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
-        <symbol id="cr-i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
-        <symbol id="cr-i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
-        <symbol id="cr-i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
-        <symbol id="cr-i-share" viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13"/></symbol>
-        <symbol id="cr-i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
-        <symbol id="cr-i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></symbol>
-        <symbol id="cr-i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
-        <symbol id="cr-i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-        <symbol id="cr-i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
-        <symbol id="cr-i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 7.5v5M12 16.5h.01"/></symbol>
-        <symbol id="cr-i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></symbol>
-        <symbol id="cr-i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
-        <symbol id="cr-i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
-        <symbol id="cr-i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.4-6.4L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.4 6.4L3 16M3 21v-5h5"/></symbol>
-        <symbol id="cr-i-line" viewBox="0 0 24 24"><path class="cr-fill" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.1 2-4.8C22 6.6 17.5 3 12 3z"/></symbol>
-    </svg>
-
     <div id="app">
-        <!-- SPA View Container -->
-
-        <!-- 1. CREATOR VIEW: a 3-step flow (who, cake, message & send) around a live 3D preview -->
-        <main id="creator-view" class="view-panel active-view cr" data-step="1">
-            <header class="cr-topbar">
-                <a class="cr-brand" href="#/" aria-label="HBD 3D Craft">
-                    <svg class="cr-ico cr-brand-ico" aria-hidden="true"><use href="#cr-i-cake"/></svg>
-                    <span>HBD 3D Craft</span>
-                </a>
-                <div class="cr-topbar-actions">
-                    <a id="cr-example-link" class="cr-link-btn" href="#/" target="_blank" rel="noopener">
-                        <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-eye"/></svg>
-                        <span data-i18n="crExample">See an example</span>
-                    </a>
-                    <div class="cr-lang" role="group" data-i18n-aria="crLangLabel" aria-label="Language">
-                        <button type="button" class="cr-lang-btn" data-lang="th" lang="th" aria-pressed="false">TH</button>
-                        <button type="button" class="cr-lang-btn" data-lang="en" lang="en" aria-pressed="false">EN</button>
-                        <button type="button" class="cr-lang-btn" data-lang="ja" lang="ja" aria-pressed="false">JA</button>
-                    </div>
-                </div>
-            </header>
-
-            <div class="cr-layout">
-                <!-- Live 3D preview -->
-                <section class="cr-stage" data-i18n-aria="crPreviewLabel" aria-label="Card preview">
-                    <div class="cr-canvas" id="preview-canvas-wrapper">
-                        <!-- Three.js canvas mounts here -->
-                        <div class="cr-loader" role="status">
-                            <span class="cr-spinner" aria-hidden="true"></span>
-                            <p data-i18n="crLoading">Baking your cake… you can start typing.</p>
-                        </div>
-                    </div>
-                    <p class="cr-stage-caption" id="cr-stage-caption" aria-hidden="true"></p>
-                    <p class="cr-drag-hint" id="cr-drag-hint">
-                        <span data-i18n="crDragHint">Drag sideways to spin</span>
-                    </p>
-                </section>
-
-                <!-- Step panel -->
-                <section class="cr-panel">
-                    <nav class="cr-stepper-nav" data-i18n-aria="crStepsLabel" aria-label="Steps">
-                        <ol class="cr-stepper">
-                            <li><button type="button" class="cr-step-btn" data-goto="1" aria-current="step"><span class="cr-step-num" aria-hidden="true">1</span><span class="cr-step-label" data-i18n="crStep1Short">Who's it for?</span></button></li>
-                            <li><button type="button" class="cr-step-btn" data-goto="2"><span class="cr-step-num" aria-hidden="true">2</span><span class="cr-step-label" data-i18n="crStep2Short">Pick the cake</span></button></li>
-                            <li><button type="button" class="cr-step-btn" data-goto="3"><span class="cr-step-num" aria-hidden="true">3</span><span class="cr-step-label" data-i18n="crStep3Short">Message &amp; send</span></button></li>
-                        </ol>
-                    </nav>
-
-                    <form id="creator-form" class="cr-form" novalidate>
-                        <!-- STEP 1: who -->
-                        <div class="cr-step" id="cr-step-1" data-step="1">
-                            <h2 class="cr-step-title" tabindex="-1" data-i18n="crStep1">Who's it for?</h2>
-                            <p class="cr-hero" data-i18n="crHero">Make a 3D birthday cake they can blow out, right from LINE.</p>
-                            <ul class="cr-benefits">
-                                <li><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-mic"/></svg><span data-i18n="crChipMic">Blow out candles for real</span></li>
-                                <li><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-music"/></svg><span data-i18n="crChipLetter">Music &amp; a secret letter</span></li>
-                                <li><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-link"/></svg><span data-i18n="crChipNoApp">Opens in any browser, no app</span></li>
-                            </ul>
-
-                            <div class="cr-field">
-                                <label for="recipient-name" class="cr-label"><span data-i18n="crNameLabel">Their name</span> <span class="cr-req" aria-hidden="true">*</span></label>
-                                <input type="text" id="recipient-name" name="recipientName" class="cr-input" maxlength="25" autocomplete="off" enterkeyhint="next" required aria-describedby="recipient-name-error" data-i18n-ph="crNamePlh" placeholder="e.g. Mind">
-                                <p class="cr-error" id="recipient-name-error" hidden>
-                                    <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-alert"/></svg>
-                                    <span data-i18n="crNameError">Add their name so the card can greet them.</span>
-                                </p>
-                            </div>
-
-                            <div class="cr-field">
-                                <label for="birth-date" class="cr-label" data-i18n="crDateLabel">Birthday (optional)</label>
-                                <div class="cr-date-row">
-                                    <input type="date" id="birth-date" name="bdate" class="cr-input" aria-describedby="birth-date-hint">
-                                    <button type="button" class="cr-icon-btn" id="btn-clear-date" data-i18n-aria="crDateClear" aria-label="Clear date" hidden>
-                                        <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-x"/></svg>
-                                    </button>
-                                </div>
-                                <p class="cr-hint" id="birth-date-hint" data-i18n="crDateHint">We'll say "belated" automatically if it has just passed.</p>
-                            </div>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crRelationLabel">They're your…</legend>
-                                <div class="cr-chips">
-                                    <label class="cr-chip"><input type="radio" name="relation" value="friend" checked><span data-i18n="crRelFriend">Friend</span></label>
-                                    <label class="cr-chip"><input type="radio" name="relation" value="partner"><span data-i18n="crRelPartner">Partner</span></label>
-                                    <label class="cr-chip"><input type="radio" name="relation" value="family"><span data-i18n="crRelFamily">Family</span></label>
-                                    <label class="cr-chip"><input type="radio" name="relation" value="colleague"><span data-i18n="crRelColleague">Colleague</span></label>
-                                </div>
-                            </fieldset>
-
-                            <div class="cr-field">
-                                <label for="sender-name" class="cr-label" data-i18n="crFromLabel">From (optional)</label>
-                                <input type="text" id="sender-name" name="sender" class="cr-input" maxlength="40" autocomplete="nickname" enterkeyhint="done" aria-describedby="sender-name-hint" data-i18n-ph="crFromPlh" placeholder="Your name">
-                                <p class="cr-hint" id="sender-name-hint" data-i18n="crFromHint">Shown on the card so they know who sent it.</p>
-                            </div>
-                        </div>
-
-                        <!-- STEP 2: the cake -->
-                        <div class="cr-step" id="cr-step-2" data-step="2" hidden>
-                            <h2 class="cr-step-title" tabindex="-1" data-i18n="crStep2">Pick the cake</h2>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label"><span data-i18n="crLooksLabel">Start with a look</span> <button type="button" class="cr-badge" id="cr-look-edited" hidden><span data-i18n="crLookEdited">Edited</span> · <span data-i18n="crLookReset">Reset</span></button></legend>
-                                <div class="cr-looks">
-                                    <label class="cr-look"><input type="radio" name="preset" value="pink-dream"><span class="cr-look-swatch" style="--sw: linear-gradient(135deg, #ff4d8d, #7a00ff)"></span><span class="cr-look-name" data-i18n="presetPinkDream">Pink Dream</span></label>
-                                    <label class="cr-look"><input type="radio" name="preset" value="chocolate-royal"><span class="cr-look-swatch" style="--sw: linear-gradient(135deg, #ffd700, #3a2a12)"></span><span class="cr-look-name" data-i18n="presetChocoRoyal">Choco Royal</span></label>
-                                    <label class="cr-look"><input type="radio" name="preset" value="mint-chocolate"><span class="cr-look-swatch" style="--sw: linear-gradient(135deg, #00f2fe, #4facfe)"></span><span class="cr-look-name" data-i18n="presetMintBreeze">Mint Breeze</span></label>
-                                    <label class="cr-look"><input type="radio" name="preset" value="midnight-gold"><span class="cr-look-swatch" style="--sw: linear-gradient(135deg, #ffd700, #111111)"></span><span class="cr-look-name" data-i18n="presetMidnightRoyal">Midnight Royal</span></label>
-                                    <label class="cr-look"><input type="radio" name="preset" value="sakura-sweet"><span class="cr-look-swatch" style="--sw: linear-gradient(135deg, #ff758f, #ffe3ec)"></span><span class="cr-look-name" data-i18n="crLookSakura">Sakura Sweet</span></label>
-                                    <label class="cr-look"><input type="radio" name="preset" value="cosmic-crystal"><span class="cr-look-swatch" style="--sw: linear-gradient(135deg, #8a2be2, #00f2fe)"></span><span class="cr-look-name" data-i18n="crLookCosmic">Cosmic Crystal</span></label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="cr-field cr-fieldset" id="cake-model">
-                                <legend class="cr-label" data-i18n="crShapeLabel">Shape</legend>
-                                <div class="cr-chips">
-                                    <label class="cr-chip"><input type="radio" name="cakeModel" value="classic-tiered" checked><span data-i18n="crShapeClassic">Classic 2-tier</span></label>
-                                    <label class="cr-chip"><input type="radio" name="cakeModel" value="vintage-heart"><span data-i18n="crShapeHeart">Vintage heart</span></label>
-                                    <label class="cr-chip"><input type="radio" name="cakeModel" value="korean-bento"><span data-i18n="crShapeBento">Bento</span></label>
-                                    <label class="cr-chip"><input type="radio" name="cakeModel" value="triple-luxury"><span data-i18n="crShapeTriple">Grand 3-tier</span></label>
-                                    <label class="cr-chip"><input type="radio" name="cakeModel" value="cyber-prism"><span data-i18n="crShapeCrystal">Crystal prism</span></label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crThemeLabel">Mood</legend>
-                                <div class="cr-swatches">
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="neon-rose" checked><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #ff0055, #7a00ff)"></span><span data-i18n="themeNeonRose">Neon Rose</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="midnight-gold"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #ffd700, #111111)"></span><span data-i18n="themeMidnightGold">Midnight Gold</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="pastel-mint"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #00f2fe, #4facfe)"></span><span data-i18n="themeOceanBreeze">Ocean Breeze</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="lavender-dream"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #f355ff, #8000ff)"></span><span data-i18n="themeLavenderDream">Lavender Dream</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="sakura-blossom"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #ff758f, #ffb3c6)"></span><span data-i18n="themeSakuraBloom">Sakura Bloom</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="cyber-retro"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #ff3399, #ff9966)"></span><span data-i18n="themeCyberRetro">Cyber Retro</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="forest-moss"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #00ff88, #38b000)"></span><span data-i18n="themeForestMoss">Forest Moss</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="cosmic-nebula"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #8a2be2, #00f2fe)"></span><span data-i18n="themeCosmicVoid">Cosmic Void</span></label>
-                                    <label class="cr-swatch"><input type="radio" name="theme" value="choco-monarch"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #cca43b, #5c3d2e)"></span><span data-i18n="themeChocoGold">Choco Gold</span></label>
-                                </div>
-                            </fieldset>
-
-                            <!-- Backdrop: the room behind the cake. Order matches the link codec enum. -->
-                            <fieldset class="cr-field cr-fieldset" id="cr-backdrop" aria-describedby="cr-backdrop-hint">
-                                <legend class="cr-label" data-i18n="crBackdropLabel">Backdrop</legend>
-                                <div class="cr-swatches cr-backdrops">
-                                    <label class="cr-swatch cr-swatch-bg"><input type="radio" name="backdrop" value="party" checked><span class="cr-swatch-dot" style="--sw: url(room/poster-lit.webp) center/cover, linear-gradient(160deg, #6b4a2e, #1c1411)"></span><span data-i18n="crBgParty">Surprise room</span></label>
-                                    <label class="cr-swatch cr-swatch-bg"><input type="radio" name="backdrop" value="night"><span class="cr-swatch-dot" style="--sw: linear-gradient(160deg, #3a2352, #0b0714)"></span><span data-i18n="crBgNight">Night</span></label>
-                                    <label class="cr-swatch cr-swatch-bg"><input type="radio" name="backdrop" value="blush"><span class="cr-swatch-dot" style="--sw: linear-gradient(180deg, #fff8f5, #fbe7e5 58%, #f2d0d2)"></span><span data-i18n="crBgBlush">Blush</span></label>
-                                    <label class="cr-swatch cr-swatch-bg"><input type="radio" name="backdrop" value="cream"><span class="cr-swatch-dot" style="--sw: linear-gradient(180deg, #fffdf7, #f9efdf 58%, #eedcc0)"></span><span data-i18n="crBgCream">Cream</span></label>
-                                    <label class="cr-swatch cr-swatch-bg"><input type="radio" name="backdrop" value="sky"><span class="cr-swatch-dot" style="--sw: linear-gradient(180deg, #f8fbff, #e6f0fb 58%, #cfe0f3)"></span><span data-i18n="crBgSky">Sky</span></label>
-                                    <label class="cr-swatch cr-swatch-bg"><input type="radio" name="backdrop" value="mint"><span class="cr-swatch-dot" style="--sw: linear-gradient(180deg, #f7fdf9, #e3f4ec 58%, #cbe7da)"></span><span data-i18n="crBgMint">Mint</span></label>
-                                    <label class="cr-swatch cr-swatch-bg"><input type="radio" name="backdrop" value="lavender"><span class="cr-swatch-dot" style="--sw: linear-gradient(180deg, #fbf9ff, #eee8fb 58%, #dcd2f1)"></span><span data-i18n="crBgLavender">Lavender</span></label>
-                                </div>
-                                <p class="cr-hint" id="cr-backdrop-hint" data-i18n="crBackdropHint">The room behind the cake. Light ones look lovely in daytime chats.</p>
-                            </fieldset>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crTopperLabel">Topper</legend>
-                                <div class="cr-chips">
-                                    <label class="cr-chip"><input type="radio" name="topperChoice" value="hbd" checked><span data-i18n="crTopperHbd">Happy Birthday</span></label>
-                                    <label class="cr-chip"><input type="radio" name="topperChoice" value="star"><span data-i18n="crTopperStar">Star</span></label>
-                                    <label class="cr-chip"><input type="radio" name="topperChoice" value="best-senpai"><span data-i18n="crTopperHeart">Heart</span></label>
-                                    <label class="cr-chip"><input type="radio" name="topperChoice" value="custom"><span data-i18n="crTopperCustom">Custom text</span></label>
-                                    <label class="cr-chip"><input type="radio" name="topperChoice" value="none"><span data-i18n="crTopperNone">None</span></label>
-                                </div>
-                                <div class="cr-field cr-subfield" id="custom-topper-text-group" hidden>
-                                    <label for="custom-topper-text" class="cr-label" data-i18n="crTopperTextLabel">Topper text</label>
-                                    <input type="text" id="custom-topper-text" name="topperText" class="cr-input" maxlength="16" autocomplete="off" aria-describedby="custom-topper-count" data-i18n-ph="crTopperTextPlh" placeholder="e.g. Love you">
-                                    <p class="cr-counter" id="custom-topper-count" data-counter-for="custom-topper-text" aria-live="polite"></p>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crToppingsLabel">Toppings</legend>
-                                <div class="cr-steppers">
-                                    <div class="cr-stepper-row">
-                                        <label for="candle-count" class="cr-stepper-label" data-i18n="crCandles">Candles</label>
-                                        <div class="cr-num" role="group">
-                                            <button type="button" class="cr-num-btn" data-step-for="candle-count" data-delta="-1" data-i18n-aria="crDecrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-minus"/></svg></button>
-                                            <input type="number" id="candle-count" name="candles" class="cr-num-input" min="1" max="10" value="5" inputmode="numeric">
-                                            <button type="button" class="cr-num-btn" data-step-for="candle-count" data-delta="1" data-i18n-aria="crIncrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-plus"/></svg></button>
-                                        </div>
-                                    </div>
-                                    <div class="cr-stepper-row">
-                                        <label for="decor-strawberries" class="cr-stepper-label" data-i18n="crStrawberries">Strawberries</label>
-                                        <div class="cr-num" role="group">
-                                            <button type="button" class="cr-num-btn" data-step-for="decor-strawberries" data-delta="-1" data-i18n-aria="crDecrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-minus"/></svg></button>
-                                            <input type="number" id="decor-strawberries" name="strawberries" class="cr-num-input" min="0" max="8" value="4" inputmode="numeric">
-                                            <button type="button" class="cr-num-btn" data-step-for="decor-strawberries" data-delta="1" data-i18n-aria="crIncrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-plus"/></svg></button>
-                                        </div>
-                                    </div>
-                                    <div class="cr-stepper-row">
-                                        <label for="decor-cherries" class="cr-stepper-label" data-i18n="crCherries">Cherries</label>
-                                        <div class="cr-num" role="group">
-                                            <button type="button" class="cr-num-btn" data-step-for="decor-cherries" data-delta="-1" data-i18n-aria="crDecrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-minus"/></svg></button>
-                                            <input type="number" id="decor-cherries" name="cherries" class="cr-num-input" min="0" max="8" value="4" inputmode="numeric">
-                                            <button type="button" class="cr-num-btn" data-step-for="decor-cherries" data-delta="1" data-i18n-aria="crIncrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-plus"/></svg></button>
-                                        </div>
-                                    </div>
-                                    <div class="cr-stepper-row">
-                                        <label for="decor-rolls" class="cr-stepper-label" data-i18n="crRolls">Wafer rolls</label>
-                                        <div class="cr-num" role="group">
-                                            <button type="button" class="cr-num-btn" data-step-for="decor-rolls" data-delta="-1" data-i18n-aria="crDecrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-minus"/></svg></button>
-                                            <input type="number" id="decor-rolls" name="rolls" class="cr-num-input" min="0" max="6" value="3" inputmode="numeric">
-                                            <button type="button" class="cr-num-btn" data-step-for="decor-rolls" data-delta="1" data-i18n-aria="crIncrease"><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-plus"/></svg></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cr-switches">
-                                    <label class="cr-switch"><span data-i18n="crSprinkles">Rainbow sprinkles</span><input type="checkbox" role="switch" id="decor-sprinkles" name="sprinkles" checked><span class="cr-switch-track" aria-hidden="true"></span></label>
-                                    <label class="cr-switch"><span data-i18n="crHearts">Floating hearts</span><input type="checkbox" role="switch" id="decor-hearts" name="decorHearts"><span class="cr-switch-track" aria-hidden="true"></span></label>
-                                    <label class="cr-switch"><span data-i18n="crStars">Floating stars</span><input type="checkbox" role="switch" id="decor-stars" name="decorStars"><span class="cr-switch-track" aria-hidden="true"></span></label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crGlazeLabel">Frosting</legend>
-                                <div class="cr-chips">
-                                    <label class="cr-chip"><input type="radio" name="glaze" value="chocolate" checked><span data-i18n="crGlazeChocolate">Chocolate</span></label>
-                                    <label class="cr-chip"><input type="radio" name="glaze" value="strawberry"><span data-i18n="crGlazeStrawberry">Strawberry</span></label>
-                                    <label class="cr-chip"><input type="radio" name="glaze" value="mint"><span data-i18n="crGlazeMint">Mint</span></label>
-                                    <label class="cr-chip"><input type="radio" name="glaze" value="cream"><span data-i18n="crGlazeCream">Vanilla cream</span></label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crPlateLabel">Plate</legend>
-                                <div class="cr-chips">
-                                    <label class="cr-chip"><input type="radio" name="plate" value="ceramic" checked><span data-i18n="crPlateCeramic">White ceramic</span></label>
-                                    <label class="cr-chip"><input type="radio" name="plate" value="crystal"><span data-i18n="crPlateCrystal">Rose glass</span></label>
-                                    <label class="cr-chip"><input type="radio" name="plate" value="golden"><span data-i18n="crPlateGolden">Gold</span></label>
-                                    <label class="cr-chip"><input type="radio" name="plate" value="cosmic"><span data-i18n="crPlateCosmic">Black obsidian</span></label>
-                                </div>
-                            </fieldset>
-
-                            <details class="cr-details" id="cr-advanced-colors">
-                                <summary class="cr-summary"><span data-i18n="crAdvanced">Advanced colors</span></summary>
-                                <p class="cr-hint" data-i18n="crAdvancedHint">Only colors you change are saved in the link.</p>
-                                <div class="cr-colors">
-                                    <label class="cr-color"><input type="color" id="glaze-color" name="glazeColor" value="#311a11"><span data-i18n="crColGlaze">Frosting</span></label>
-                                    <label class="cr-color"><input type="color" id="cream-color" name="creamColor" value="#ed004c"><span data-i18n="crColCream">Cake</span></label>
-                                    <label class="cr-color"><input type="color" id="plate-color" name="plateColor" value="#fbfbf8"><span data-i18n="crColPlate">Plate</span></label>
-                                    <label class="cr-color"><input type="color" id="candle-color" name="candleColor" value="#ff0055"><span data-i18n="crColCandle">Candles</span></label>
-                                    <label class="cr-color"><input type="color" id="topper-color" name="topperColor" value="#00f2fe"><span data-i18n="crColTopper">Topper</span></label>
-                                    <label class="cr-color"><input type="color" id="env-base-color" name="envBaseColor" value="#111111"><span data-i18n="crColEnvBase">Envelope</span></label>
-                                    <label class="cr-color"><input type="color" id="env-flap-color" name="envFlapColor" value="#111111"><span data-i18n="crColEnvFlap">Envelope flap</span></label>
-                                    <label class="cr-color"><input type="color" id="env-seal-color" name="envSealColor" value="#d4af37"><span data-i18n="crColEnvSeal">Wax seal</span></label>
-                                </div>
-                                <button type="button" class="cr-btn cr-btn-ghost cr-btn-sm" id="btn-reset-colors">
-                                    <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-refresh"/></svg><span data-i18n="crResetColors">Reset colors</span>
-                                </button>
-                            </details>
-                        </div>
-
-                        <!-- STEP 3: message & send -->
-                        <div class="cr-step" id="cr-step-3" data-step="3" hidden>
-                            <h2 class="cr-step-title" tabindex="-1" data-i18n="crStep3">Message &amp; send</h2>
-
-                            <div class="cr-field">
-                                <div class="cr-label-row">
-                                    <label for="wish-title" class="cr-label" data-i18n="crTitleLabel">Card headline</label>
-                                    <button type="button" class="cr-text-btn" data-reset-template="title" hidden><span data-i18n="crResetText">Use suggested text</span></button>
-                                </div>
-                                <input type="text" id="wish-title" name="title" class="cr-input" maxlength="60" autocomplete="off" aria-describedby="wish-title-count">
-                                <p class="cr-counter" id="wish-title-count" data-counter-for="wish-title" aria-live="polite"></p>
-                            </div>
-
-                            <div class="cr-field">
-                                <div class="cr-label-row">
-                                    <label for="wish-message" class="cr-label" data-i18n="crMessageLabel">Message</label>
-                                    <button type="button" class="cr-text-btn" data-reset-template="message" hidden><span data-i18n="crResetText">Use suggested text</span></button>
-                                </div>
-                                <textarea id="wish-message" name="message" class="cr-input cr-textarea" rows="4" maxlength="500" aria-describedby="wish-message-hint wish-message-count"></textarea>
-                                <p class="cr-hint" id="wish-message-hint" data-i18n="crTemplateHint">Written for you. Edit freely.</p>
-                                <p class="cr-counter" id="wish-message-count" data-counter-for="wish-message" aria-live="polite"></p>
-                            </div>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crFontLabel">Handwriting style</legend>
-                                <div class="cr-tiles">
-                                    <label class="cr-tile"><input type="radio" name="font" value="outfit" checked><span class="cr-tile-sample cr-font-outfit" aria-hidden="true">Aa ก</span><span data-i18n="crFontModern">Modern</span></label>
-                                    <label class="cr-tile"><input type="radio" name="font" value="playfair"><span class="cr-tile-sample cr-font-playfair" aria-hidden="true">Aa ก</span><span data-i18n="crFontElegant">Elegant</span></label>
-                                    <label class="cr-tile"><input type="radio" name="font" value="great-vibes"><span class="cr-tile-sample cr-font-script" aria-hidden="true">Aa ก</span><span data-i18n="crFontScript">Script</span></label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="cr-field cr-fieldset">
-                                <legend class="cr-label" data-i18n="crMusicLabel">Music</legend>
-                                <div class="cr-chips">
-                                    <label class="cr-chip"><input type="radio" name="music" value="happy-birthday-lofi" checked><span data-i18n="crMusicLofi">Warm lo-fi</span></label>
-                                    <label class="cr-chip"><input type="radio" name="music" value="happy-birthday-piano"><span data-i18n="crMusicPiano">Piano</span></label>
-                                    <label class="cr-chip"><input type="radio" name="music" value="happy-birthday-synth"><span data-i18n="crMusicSynth">Upbeat pop</span></label>
-                                </div>
-                            </fieldset>
-
-                            <div class="cr-field cr-card-box">
-                                <label class="cr-switch cr-switch-lg">
-                                    <span class="cr-switch-text">
-                                        <span class="cr-switch-title" data-i18n="crLetterToggle">Add a secret letter</span>
-                                        <span class="cr-hint" data-i18n="crLetterDesc">They'll find a sealed envelope next to the cake.</span>
-                                    </span>
-                                    <input type="checkbox" role="switch" id="letter-enabled" name="letterEnabled" checked>
-                                    <span class="cr-switch-track" aria-hidden="true"></span>
-                                </label>
-
-                                <div id="letter-details-group" class="cr-letter">
-                                    <fieldset class="cr-field cr-fieldset">
-                                        <legend class="cr-label" data-i18n="crEnvelopeLabel">Envelope</legend>
-                                        <div class="cr-swatches cr-swatches-4">
-                                            <label class="cr-swatch"><input type="radio" name="letterTheme" value="royal" checked><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #111111 55%, #d4af37 56%)"></span><span data-i18n="crEnvRoyal">Black &amp; gold</span></label>
-                                            <label class="cr-swatch"><input type="radio" name="letterTheme" value="romance"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #fff0f3 55%, #900c3f 56%)"></span><span data-i18n="crEnvRomance">Blush</span></label>
-                                            <label class="cr-swatch"><input type="radio" name="letterTheme" value="cyber"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #1a1b22 45%, #00f2fe 46%, #00f2fe 70%, #ff0055 71%)"></span><span data-i18n="crEnvCyber">Neon</span></label>
-                                            <label class="cr-swatch"><input type="radio" name="letterTheme" value="steampunk"><span class="cr-swatch-dot" style="--sw: linear-gradient(135deg, #5c3d2e 55%, #b87333 56%)"></span><span data-i18n="crEnvSteampunk">Kraft</span></label>
-                                        </div>
-                                    </fieldset>
-
-                                    <div class="cr-field">
-                                        <div class="cr-label-row">
-                                            <label for="letter-title" class="cr-label" data-i18n="crLetterTitleLabel">Letter title</label>
-                                            <button type="button" class="cr-text-btn" data-reset-template="letterTitle" hidden><span data-i18n="crResetText">Use suggested text</span></button>
-                                        </div>
-                                        <input type="text" id="letter-title" name="letterTitle" class="cr-input" maxlength="60" autocomplete="off">
-                                    </div>
-
-                                    <div class="cr-field">
-                                        <div class="cr-label-row">
-                                            <label for="letter-body" class="cr-label" data-i18n="crLetterBodyLabel">Letter</label>
-                                            <button type="button" class="cr-text-btn" data-reset-template="letterBody" hidden><span data-i18n="crResetText">Use suggested text</span></button>
-                                        </div>
-                                        <textarea id="letter-body" name="letterBody" class="cr-input cr-textarea" rows="6" maxlength="1500" aria-describedby="letter-body-count"></textarea>
-                                        <p class="cr-counter" id="letter-body-count" data-counter-for="letter-body" aria-live="polite"></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="cr-field">
-                                <label for="memory-photo-url" class="cr-label" data-i18n="crPhotoLabel">Photo link (optional)</label>
-                                <div class="cr-photo-row">
-                                    <input type="url" id="memory-photo-url" name="photo" class="cr-input" inputmode="url" autocomplete="off" placeholder="https://" aria-describedby="memory-photo-hint memory-photo-status">
-                                    <img class="cr-photo-thumb" id="memory-photo-thumb" alt="" hidden>
-                                </div>
-                                <p class="cr-hint" id="memory-photo-hint" data-i18n="crPhotoHint">Paste a direct image link (https). We'll show a heart frame if it can't load.</p>
-                                <p class="cr-status" id="memory-photo-status" aria-live="polite"></p>
-                            </div>
-
-                            <button type="button" class="cr-btn cr-btn-secondary cr-btn-block" id="btn-preview-recipient">
-                                <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-eye"/></svg>
-                                <span data-i18n-tpl="crPreviewAs">Preview as recipient</span>
-                            </button>
-                        </div>
-                    </form>
-
-                    <!-- Sticky primary action (bottom bar on phones, panel footer on desktop) -->
-                    <div class="cr-actionbar">
-                        <button type="button" class="cr-btn cr-btn-ghost" id="btn-step-back">
-                            <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-back"/></svg><span data-i18n="crBack">Back</span>
-                        </button>
-                        <div class="cr-actionbar-meta">
-                            <span class="cr-step-of" id="cr-step-of"></span>
-                            <span class="cr-draft" id="cr-draft-status" aria-live="polite"></span>
-                            <button type="button" class="cr-text-btn cr-start-over" id="btn-start-over" hidden><span data-i18n="crStartOver">Start over</span></button>
-                        </div>
-                        <button type="button" class="cr-btn cr-btn-primary" id="btn-step-next">
-                            <span data-i18n="crNext">Next</span><svg class="cr-ico" aria-hidden="true"><use href="#cr-i-next"/></svg>
-                        </button>
-                        <button type="button" class="cr-btn cr-btn-primary" id="btn-generate-card" hidden>
-                            <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-send"/></svg><span data-i18n="crSend">Send card</span>
-                        </button>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Share sheet: native dialog = focus trap, inert page, Escape, ::backdrop -->
-            <dialog id="share-modal" class="cr-sheet" aria-labelledby="share-title" aria-describedby="share-sub">
-                <div class="cr-sheet-grabber" aria-hidden="true"></div>
-                <button type="button" class="cr-icon-btn cr-sheet-close" id="btn-modal-close" data-i18n-aria="crClose" aria-label="Close">
-                    <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-x"/></svg>
-                </button>
-                <div class="cr-sheet-head">
-                    <span class="cr-sheet-badge" aria-hidden="true"><svg class="cr-ico"><use href="#cr-i-check"/></svg></span>
-                    <h2 id="share-title" data-i18n-tpl="crSheetTitle">Ready!</h2>
-                    <p id="share-sub" class="cr-hint" data-i18n="crSheetSub">Send it where you usually chat.</p>
-                </div>
-
-                <div class="cr-sheet-actions">
-                    <a class="cr-btn cr-btn-line cr-btn-block" id="btn-share-line" href="#" target="_blank" rel="noopener">
-                        <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-line"/></svg><span data-i18n="crSendLine">Send via LINE</span>
-                    </a>
-                    <button type="button" class="cr-btn cr-btn-secondary cr-btn-block" id="btn-share-native" hidden>
-                        <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-share"/></svg><span data-i18n="crShare">Share…</span>
-                    </button>
-                </div>
-
-                <div class="cr-copy">
-                    <label for="share-url-input" class="cr-visually-hidden" data-i18n="crLinkLabel">Card link</label>
-                    <input type="text" id="share-url-input" class="cr-input" readonly>
-                    <button type="button" class="cr-btn cr-btn-secondary" id="btn-copy-url">
-                        <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-copy"/></svg><span data-i18n="crCopy">Copy</span>
-                    </button>
-                </div>
-                <p class="cr-hint cr-copy-fail" id="copy-fail-hint" hidden data-i18n="crCopyFail">Press and hold the link to copy</p>
-
-                <figure class="cr-qr" id="share-qr-wrap" hidden>
-                    <canvas id="share-qr" role="img" data-i18n-aria="crQr" aria-label="QR code"></canvas>
-                    <figcaption data-i18n="crQr">Scan to open on your phone</figcaption>
-                </figure>
-
-                <p class="cr-privacy" data-i18n="crPrivacy">Your message lives only in this link. We store nothing, but anyone with the link can open it.</p>
-                <a href="#" id="btn-test-link" class="cr-link-btn cr-open-card" target="_blank" rel="noopener">
-                    <svg class="cr-ico" aria-hidden="true"><use href="#cr-i-external"/></svg><span data-i18n="crOpenCard">Open card</span>
-                </a>
-            </dialog>
-
-            <div class="cr-toast" id="cr-toast" role="status" aria-live="polite"></div>
-        </main>
-
-        <!-- 2. RECEIVER VIEW -->
-        <main id="receiver-view" class="view-panel rcv">
-            <!-- Language stays reachable before and after opening. -->
-            <div class="rcv-lang">
+        <!-- SPA View Container: Dedicated Receiver Experience for Euodia -->
+        <main id="receiver-view" class="view-panel rcv active-view">
+            <!-- Language switcher (hidden for personal dedicated experience) -->
+            <div class="rcv-lang" style="display: none;" aria-hidden="true">
                 <i class="fa-solid fa-globe" aria-hidden="true"></i>
                 <select id="lang-switcher-receiver" class="rcv-lang-select" aria-label="Language">
+                    <option value="en" selected>EN</option>
                     <option value="th">TH</option>
-                    <option value="en">EN</option>
                     <option value="ja">JA</option>
                 </select>
             </div>
 
-            <!-- Gate: personal first read. The scene is built behind it while it is read. -->
-            <div id="envelope-gate" class="rcv-gate active-gate">
-                <div class="rcv-gate-card" role="group" aria-labelledby="rcv-gate-headline">
-                    <div class="rcv-gate-flap" aria-hidden="true"></div>
-                    <div class="rcv-seal" aria-hidden="true"><span id="rcv-seal-initial"></span></div>
-                    <p class="rcv-eyebrow" id="rcv-gate-eyebrow"></p>
-                    <h1 id="rcv-gate-headline" class="rcv-gate-headline"></h1>
-                    <button type="button" id="btn-open-envelope" class="rcv-open-btn" data-state="loading">
-                        <span class="rcv-open-spinner" aria-hidden="true"></span>
-                        <span class="rcv-open-label" id="rcv-open-label"></span>
-                        <span class="rcv-open-progress" aria-hidden="true"><span id="rcv-open-bar"></span></span>
-                    </button>
-                    <button type="button" id="btn-open-quiet" class="rcv-quiet-btn"></button>
-                    <p class="rcv-gate-sound" id="rcv-gate-sound"></p>
+            <!-- 1. PERSONALIZED OPENING SCENE (Envelope Gate & Countdown) -->
+            <div id="envelope-gate" class="rcv-gate active-gate euodia-gate">
+                <div class="ambient-glow-orb orb-1" aria-hidden="true"></div>
+                <div class="ambient-glow-orb orb-2" aria-hidden="true"></div>
+
+                <div class="euodia-gate-container">
+                    <!-- LIVE BIRTHDAY COUNTDOWN -->
+                    <div class="countdown-wrapper" id="birthday-countdown-wrap">
+                        <div class="countdown-grid">
+                            <div class="countdown-tile">
+                                <span class="countdown-num" id="count-days">00</span>
+                                <span class="countdown-label">DAYS</span>
+                            </div>
+                            <div class="countdown-tile">
+                                <span class="countdown-num" id="count-hours">00</span>
+                                <span class="countdown-label">HOURS</span>
+                            </div>
+                            <div class="countdown-tile">
+                                <span class="countdown-num" id="count-minutes">00</span>
+                                <span class="countdown-label">MINUTES</span>
+                            </div>
+                            <div class="countdown-tile">
+                                <span class="countdown-num" id="count-seconds">00</span>
+                                <span class="countdown-label">SECONDS</span>
+                            </div>
+                        </div>
+                        <p class="countdown-status-msg" id="count-message">Something special is waiting for you, Euodia.</p>
+                    </div>
+
+                    <!-- SURPRISE BUTTON: Revealed strictly after countdown finishes -->
+                    <div class="surprise-action-wrap" id="surprise-action-wrap" hidden>
+                        <button type="button" id="btn-open-envelope" class="euodia-open-btn" data-state="ready">
+                            <span class="btn-shimmer" aria-hidden="true"></span>
+                            <span class="rcv-open-spinner" aria-hidden="true"></span>
+                            <span id="rcv-open-label">OPEN YOUR SURPRISE</span>
+                            <span class="rcv-open-progress" aria-hidden="true"><span id="rcv-open-bar"></span></span>
+                        </button>
+                        <button type="button" id="btn-open-quiet" class="euodia-quiet-btn">Open quietly (without sound)</button>
+                    </div>
+
+                    <span id="rcv-seal-initial" style="display:none;">E</span>
+                    <p class="rcv-gate-sound" id="rcv-gate-sound" style="display:none;"></p>
                 </div>
             </div>
 
-            <!-- Poster mode: the baked dark/lit stills, while the room loads or on phones too slow for it -->
+            <!-- Poster mode: baked stills while room streams or on low-end devices -->
             <div id="rcv-poster" class="rcv-poster" aria-hidden="true" hidden>
                 <img id="rcv-poster-dark" class="rcv-poster-img rcv-poster-img-dark" alt="" decoding="async">
                 <img id="rcv-poster-lit" class="rcv-poster-img rcv-poster-img-lit" alt="" decoding="async">
             </div>
 
-            <!-- 3D stage (canvas is added by viewer.js, hidden until the reveal) -->
+            <!-- 2. 3D CINEMATIC STAGE -->
             <div id="greeting-canvas-container" class="rcv-stage"></div>
 
-            <!-- Heads-up display: one instruction at a time -->
+            <!-- 3. HEADS-UP DISPLAY (Instructions, Switch, Lyrics, Audio Controls) -->
             <div class="rcv-hud" id="rcv-hud" inert>
                 <p class="rcv-title" id="rcv-title"></p>
 
-                <!-- Party room: the dark doorway, the glowing switch, the SURPRISE hit, the song -->
+                <!-- Glowing light switch in the dark room -->
                 <button type="button" id="rcv-switch" class="rcv-switch" hidden>
                     <span class="rcv-switch-ring" aria-hidden="true"></span>
                     <i class="fa-solid fa-hand-pointer rcv-switch-hand" aria-hidden="true"></i>
@@ -525,6 +103,7 @@
                 <button type="button" id="btn-dark-skip" class="rcv-link-btn rcv-dark-skip" hidden></button>
                 <p id="rcv-surprise" class="rcv-surprise" aria-hidden="true"></p>
                 <p id="rcv-cake-coming" class="rcv-cake-coming" hidden></p>
+                
                 <div id="rcv-lyrics" class="rcv-lyrics" hidden>
                     <p id="rcv-lyric-line" aria-live="off"></p>
                     <button type="button" id="btn-skip-song" class="rcv-link-btn rcv-skip-song" hidden></button>
@@ -554,6 +133,7 @@
 
                 <div class="rcv-candles2d" id="rcv-candles2d" hidden></div>
 
+                <!-- Candle blowing HUD (mic or touch) -->
                 <div class="rcv-blow" id="rcv-blow" hidden>
                     <div class="rcv-pill">
                         <span class="rcv-pill-icon" aria-hidden="true"><i class="fa-solid fa-hand-pointer" id="rcv-pill-icon"></i></span>
@@ -580,55 +160,70 @@
                 </div>
             </div>
 
-            <!-- Message card: bottom sheet on phones, side panel on desktop -->
+            <!-- 4. BIRTHDAY MESSAGE SHEET, PHOTO GALLERY & FINALE -->
             <section id="rcv-card" class="rcv-card" role="dialog" aria-modal="false" aria-labelledby="view-title" inert aria-hidden="true">
                 <div class="rcv-card-handle" aria-hidden="true"></div>
                 <button type="button" id="btn-close-greeting-card" class="rcv-close">
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                    <span class="rcv-sr" id="rcv-card-close-label"></span>
+                    <span class="rcv-sr" id="rcv-card-close-label">Close</span>
                 </button>
+                
                 <div class="rcv-card-scroll">
                     <p class="rcv-card-to" id="rcv-card-to"></p>
                     <p id="view-date" class="rcv-card-date"></p>
                     <img id="rcv-card-photo" class="rcv-card-photo" alt="" referrerpolicy="no-referrer" hidden>
+                    
                     <div class="rcv-card-text" id="rcv-card-text">
                         <h2 id="view-title" tabindex="-1"></h2>
                         <p id="view-message" class="rcv-card-message"></p>
                         <p class="rcv-card-signature" id="rcv-card-signature"></p>
                     </div>
+
                     <button type="button" id="btn-read-letter" class="rcv-btn rcv-btn-letter" hidden></button>
+
+                    <!-- DEDICATED 10-PHOTO GALLERY: A LITTLE GALLERY OF YOU -->
+                    <section id="photo-gallery-container" class="gallery-section-wrap"></section>
+
+                    <!-- FINAL CELEBRATION & MESSAGE BANNER -->
+                    <div class="final-celebration-banner">
+                        <h3 class="final-title">HAPPY BIRTHDAY, EUODIA.</h3>
+                        <p class="final-quote">May your days always be as beautiful as your heart.</p>
+                        <p class="final-sender">With love, from your bf.</p>
+                        <button type="button" id="btn-final-replay" class="final-replay-btn">
+                            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> EXPERIENCE IT AGAIN
+                        </button>
+                    </div>
+
+                    <!-- End actions -->
                     <div class="rcv-end">
                         <button type="button" id="btn-thanks" class="rcv-btn rcv-btn-gold"></button>
                         <div class="rcv-end-row">
                             <button type="button" id="btn-replay" class="rcv-end-btn">
-                                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i><span id="rcv-replay-label"></span>
+                                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i><span id="rcv-replay-label">Replay</span>
                             </button>
                             <button type="button" id="btn-save-photo" class="rcv-end-btn">
-                                <i class="fa-solid fa-camera" aria-hidden="true"></i><span id="rcv-save-label"></span>
+                                <i class="fa-solid fa-camera" aria-hidden="true"></i><span id="rcv-save-label">Save Card Photo</span>
                             </button>
-                            <a href="#/" id="btn-make-own" class="rcv-end-btn">
-                                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><span id="rcv-make-label"></span>
-                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Letter: opened from the card, never hunted for in 3D -->
+            <!-- 5. PERSONAL SECRET LETTER (Parment Popup Envelope) -->
             <div id="letter-popup-overlay" class="letter-overlay-gate" role="dialog" aria-modal="true" aria-labelledby="letter-popup-title" inert>
                 <div class="letter-popup-wrapper">
                     <button type="button" id="btn-close-letter" class="letter-close-btn">
                         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                        <span class="rcv-sr" id="rcv-letter-close-label"></span>
+                        <span class="rcv-sr" id="rcv-letter-close-label">Close</span>
                     </button>
                     <div class="letter-open-hint" id="letter-open-hint">
                         <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
-                        <span data-i18n="letterOpenHint">Tap the wax seal or envelope to read the message</span>
+                        <span>Tap the wax seal or envelope to read the message</span>
                     </div>
                     <div class="interactive-envelope" id="letter-envelope-container" role="button" tabindex="0">
                         <div class="envelope-back"></div>
                         <div class="envelope-paper" id="letter-paper">
-                            <div class="letter-stamp-seal"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i></div>
+                            <div class="letter-stamp-seal"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
                             <div class="letter-inner-content">
                                 <h2 id="letter-popup-title"></h2>
                                 <div class="letter-body-scroll">
@@ -643,7 +238,10 @@
                 </div>
             </div>
 
-            <!-- "Press and hold to save" preview for in-app browsers that block downloads -->
+            <!-- Lightbox for Photo Gallery -->
+            <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" hidden></div>
+
+            <!-- Photo preview for in-app browsers -->
             <div id="rcv-photo-preview" class="rcv-photo-preview" role="dialog" aria-modal="true" aria-labelledby="rcv-photo-hint" hidden>
                 <img id="rcv-photo-img" alt="">
                 <p id="rcv-photo-hint"></p>

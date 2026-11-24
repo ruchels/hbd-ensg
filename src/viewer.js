@@ -35,6 +35,7 @@ import { loadCardFont } from './fonts.js';
 import { createAudioEngine } from './audio/engine.js';
 import { createSong, SONG_LENGTH, LYRIC_STARTS } from './audio/song.js';
 import * as cues from './audio/cues.js';
+import { PhotoGalleryController } from './photo-gallery.js';
 
 // The party room (src/room/index.js, lazy chunk). Optional at build time:
 // without it, or if it fails to load, the card plays on the classic night stage.
@@ -421,6 +422,8 @@ export function destroyViewer() {
     roomAbort?.abort();
     roomAbort = null;
     hideDarkUi();
+    galleryController?.closeLightbox();
+    galleryController = null;
 
     disposeScene();
     const container = $('greeting-canvas-container');
@@ -689,7 +692,7 @@ function translateReceiver() {
     if (eyebrow) eyebrow.textContent = t('rcvEyebrow');
     fillTemplate($('rcv-gate-headline'), sender ? 'rcvGateHeadline' : 'rcvGateHeadlineAnon', { name, sender });
     const seal = $('rcv-seal-initial');
-    if (seal) seal.textContent = firstGrapheme(sender) || '🎂';
+    if (seal) seal.textContent = firstGrapheme(activeConfig?.recipientName) || 'E';
     const sound = $('rcv-gate-sound');
     if (sound) sound.textContent = t('rcvGateSound');
     const quiet = $('btn-open-quiet');
@@ -740,7 +743,7 @@ function updateOpenLabel() {
     const btn = $('btn-open-envelope');
     const label = $('rcv-open-label');
     if (!btn || !label) return;
-    label.textContent = btn.dataset.state === 'waiting' ? t('rcvPreparing') : t(partyMode ? 'rcvOpenSound' : 'rcvOpen');
+    label.textContent = btn.dataset.state === 'waiting' ? (t('rcvPreparing') || 'Preparing…') : 'OPEN YOUR SURPRISE';
 }
 
 function setProgress(p) {
@@ -1362,9 +1365,9 @@ async function uploadTextures(alive) {
  */
 function topperTextFor() {
     const custom = (activeConfig.topperText || '').trim();
-    if (custom || !partyMode) return custom;
+    if (custom) return custom;
     const name = (activeConfig.recipientName || '').trim();
-    return (activeConfig.topper || 'hbd') === 'hbd' && name ? `HBD ${name}` : '';
+    return name ? `Happy Birthday ${name}` : 'Happy Birthday';
 }
 
 function buildCake(mobile) {
@@ -2243,6 +2246,12 @@ function onOpenClick(quiet) {
     syncAudioButton();
     // Must run synchronously inside the tap: iOS only unlocks audio here.
     unlockAudio();
+    if (audio && !quiet) {
+        cues.paper(audio);
+        later(() => playChime(1046.5), 100);
+    }
+    const teaser = $('teaser-envelope');
+    teaser?.classList.add('is-opening');
     if (isReady) {
         startReveal();
         return;
@@ -2963,9 +2972,25 @@ function celebrate() {
     // One generous centred burst plus two side cannons: one payoff, not four.
     confetti({ particleCount: 110, spread: 100, startVelocity: 42, origin: { x: 0.5, y: 0.5 }, colors, scalar: 1.05 });
     later(() => {
-        confetti({ particleCount: 45, angle: 60, spread: 60, origin: { x: 0, y: 0.75 }, colors });
-        confetti({ particleCount: 45, angle: 120, spread: 60, origin: { x: 1, y: 0.75 }, colors });
+        confetti({ particleCount: 50, angle: 60, spread: 65, origin: { x: 0, y: 0.75 }, colors });
+        confetti({ particleCount: 50, angle: 120, spread: 65, origin: { x: 1, y: 0.75 }, colors });
     }, 220);
+    later(() => {
+        for (let i = 0; i < 14; i++) {
+            later(spawnFloatingHeart, i * 200);
+        }
+    }, 400);
+}
+
+function spawnFloatingHeart() {
+    const symbols = ['💖', '✨', '🌸', '💕', '⭐', '🎂'];
+    const el = document.createElement('div');
+    el.className = 'floating-heart-particle';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = `${Math.random() * 88 + 6}%`;
+    el.style.animationDuration = `${(Math.random() * 2 + 3.2).toFixed(1)}s`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 5500);
 }
 
 function replay() {
@@ -3263,10 +3288,19 @@ function fillCard() {
     if (thanks) thanks.textContent = sender ? t('rcvThanks', { sender }) : t('rcvThanksAnon');
 }
 
+let galleryController = null;
+
+function ensureGallery() {
+    if (!galleryController && document.getElementById('photo-gallery-container')) {
+        galleryController = new PhotoGalleryController('photo-gallery-container', 'gallery-lightbox');
+    }
+}
+
 function openCard() {
     const card = $('rcv-card');
     if (!card) return;
     fillCard();
+    ensureGallery();
     focusBeforeCard = document.activeElement;
     setOpen(card, true);
     $('btn-hud-card')?.setAttribute('aria-expanded', 'true');

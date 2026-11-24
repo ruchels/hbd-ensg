@@ -1,0 +1,912 @@
+@import '@fontsource/playfair-display/latin-600.css';
+@import '@fontsource/playfair-display/latin-700.css';
+@import '@fontsource/great-vibes/latin-400.css';
+
+/* ==========================================================================
+   PERSONAL BIRTHDAY VISUAL IDENTITY FOR EUODIA NATALINA SIAGIAN
+   Theme: Midnight Plum, Soft Blush Pink, Champagne Gold, Warm Ivory, Rose Gold
+   ========================================================================== */
+
+:root {
+    --color-plum-dark: #120616;
+    --color-plum-deep: #1b0c20;
+    --color-plum-mid: #2c1232;
+    --color-plum-light: #3f1a46;
+    
+    --color-blush-soft: #ffcad4;
+    --color-blush-rose: #f4acb7;
+    --color-rose-deep: #ff758f;
+    --color-rose-gold: #c98492;
+    
+    --color-gold-light: #fef1cf;
+    --color-gold-champagne: #f5d491;
+    --color-gold-rich: #e0ad35;
+    --color-gold-deep: #b5831e;
+    
+    --color-ivory: #fffdf9;
+    --color-ivory-warm: #fcf7f0;
+    
+    --color-lavender-subtle: #d6b8e8;
+    
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-script: 'Great Vibes', cursive, 'Brush Script MT';
+    --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    --glass-bg: rgba(27, 12, 32, 0.72);
+    --glass-border: rgba(245, 212, 145, 0.22);
+    --glass-shadow: 0 16px 40px rgba(10, 4, 14, 0.65);
+}
+
+/* Base Body Adjustments */
+body {
+    background-color: var(--color-plum-dark);
+    color: var(--color-ivory);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   OPENING SCENE (Personalized Gate)
+   ========================================================================== */
+
+.rcv-gate.euodia-gate {
+    background: 
+        radial-gradient(circle at 50% 18%, rgba(255, 117, 143, 0.16) 0%, transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(224, 173, 53, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 20% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+        linear-gradient(175deg, var(--color-plum-deep) 0%, var(--color-plum-dark) 100%);
+    padding: calc(20px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rcv-gate.euodia-gate:not(.active-gate) {
+    display: none !important;
+}
+
+.rcv-gate.euodia-gate.is-leaving {
+    opacity: 0 !important;
+    transform: scale(1.04);
+    pointer-events: none !important;
+}
+
+.euodia-gate-container {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeInGate 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInGate {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Ambient Particles */
+.ambient-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+    animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+    width: 260px;
+    height: 260px;
+    top: -40px;
+    left: -40px;
+    background: radial-gradient(circle, rgba(255, 117, 143, 0.3), transparent 70%);
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -60px;
+    right: -50px;
+    background: radial-gradient(circle, rgba(224, 173, 53, 0.25), transparent 70%);
+    animation-delay: -4s;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(25px, 20px) scale(1.12); }
+}
+
+/* Badge */
+.euodia-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    background: rgba(245, 212, 145, 0.08);
+    border: 1px solid rgba(245, 212, 145, 0.28);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--color-gold-champagne);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.badge-sparkle {
+    color: var(--color-gold-rich);
+    font-size: 0.85rem;
+}
+
+/* Recipient Title & Subtitle */
+.euodia-main-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.1rem, 7vw, 2.85rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 8px;
+    background: linear-gradient(135deg, var(--color-ivory) 20%, var(--color-blush-soft) 60%, var(--color-gold-champagne) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 20px rgba(255, 180, 195, 0.2);
+    letter-spacing: -0.01em;
+}
+
+.euodia-date-sub {
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-rose-gold);
+    margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   COUNTDOWN TIMER
+   ========================================================================== */
+
+.countdown-wrapper {
+    width: 100%;
+    margin-bottom: 26px;
+    padding: 16px 12px;
+    border-radius: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--glass-shadow);
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.countdown-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 4px;
+    border-radius: 14px;
+    background: rgba(44, 18, 50, 0.6);
+    border: 1px solid rgba(245, 212, 145, 0.12);
+}
+
+.countdown-num {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 4.8vw, 1.95rem);
+    font-weight: 700;
+    color: var(--color-gold-champagne);
+    line-height: 1;
+    margin-bottom: 4px;
+    display: inline-block;
+    transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.countdown-num.tick {
+    animation: tickPulse 0.35s ease-out;
+}
+
+@keyframes tickPulse {
+    0% { transform: scale(1.16); color: var(--color-gold-light); }
+    100% { transform: scale(1); color: var(--color-gold-champagne); }
+}
+
+.countdown-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-blush-rose);
+    opacity: 0.85;
+}
+
+.countdown-status-msg {
+    margin-top: 12px;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--color-blush-soft);
+    line-height: 1.4;
+    min-height: 1.4em;
+}
+
+.countdown-wrapper.birthday-arrived .countdown-status-msg {
+    font-family: var(--font-heading);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--color-gold-light);
+    letter-spacing: 0.08em;
+    font-size: 1.1rem;
+    text-shadow: 0 0 16px rgba(245, 212, 145, 0.6);
+}
+
+/* ==========================================================================
+   SURPRISE ACTION WRAPPER (Revealed strictly after countdown finishes)
+   ========================================================================== */
+
+.surprise-action-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 14px;
+    animation: revealSurpriseBtn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.surprise-action-wrap[hidden] {
+    display: none !important;
+}
+
+@keyframes revealSurpriseBtn {
+    0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================================================
+   PERSONAL ENVELOPE / CARD TEASER
+   ========================================================================== */
+
+.euodia-envelope-teaser {
+    position: relative;
+    width: min(100%, 360px);
+    height: 130px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #2a112e, #1a081d);
+    border: 1px solid rgba(224, 173, 53, 0.28);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    margin-bottom: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.euodia-envelope-teaser:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(224, 173, 53, 0.2);
+}
+
+.teaser-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, #38153e, #230c27);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    border-bottom: 1px solid rgba(245, 212, 145, 0.2);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top center;
+    z-index: 2;
+}
+
+.teaser-seal {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #f6e297, #b8861d 65%, #6a4c07 100%);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #381a00;
+    z-index: 3;
+    transition: transform 0.4s ease;
+}
+
+.teaser-seal-initial {
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.teaser-note {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-blush-rose);
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   PRIMARY ACTION BUTTONS
+   ========================================================================== */
+
+.euodia-open-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: min(100%, 340px);
+    min-height: 54px;
+    padding: 14px 28px;
+    border-radius: 36px;
+    background: linear-gradient(135deg, #ffd76a 0%, #e0ad35 48%, #c58d19 100%);
+    border: none;
+    color: #2b1704;
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(224, 173, 53, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease;
+    overflow: hidden;
+}
+
+.euodia-open-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(224, 173, 53, 0.55);
+}
+
+.euodia-open-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.euodia-open-btn .btn-shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: skewX(-22deg);
+    animation: btnShimmer 3.2s infinite;
+}
+
+@keyframes btnShimmer {
+    0% { left: -100%; }
+    40%, 100% { left: 180%; }
+}
+
+.euodia-quiet-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-rose-gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-top: 14px;
+    padding: 8px 14px;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.euodia-quiet-btn:hover {
+    opacity: 1;
+    color: var(--color-ivory);
+}
+
+/* ==========================================================================
+   PHOTO GALLERY ("A LITTLE GALLERY OF YOU")
+   ========================================================================== */
+
+.gallery-section-wrap {
+    width: 100%;
+    margin: 36px 0 20px;
+    padding: 0 8px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.gallery-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--color-gold-rich);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.gallery-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.45rem, 5vw, 1.85rem);
+    font-weight: 700;
+    color: var(--color-ivory);
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+}
+
+.gallery-subtitle {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--color-blush-soft);
+    margin: 0;
+}
+
+.gallery-carousel-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 16px 8px 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Polaroid Card */
+.polaroid-card {
+    flex: 0 0 clamp(230px, 68vw, 290px);
+    scroll-snap-align: center;
+    border-radius: 12px;
+    background: #fffaf5;
+    padding: 12px 12px 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.polaroid-card:hover {
+    transform: translateY(-6px) rotate(-0.5deg);
+    box-shadow: 0 16px 36px rgba(224, 173, 53, 0.22), 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.polaroid-photo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #25122b;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.polaroid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.polaroid-card:hover .polaroid-img {
+    transform: scale(1.04);
+}
+
+.polaroid-shine {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 45%);
+}
+
+.polaroid-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4px 0;
+}
+
+.polaroid-caption {
+    font-family: var(--font-script);
+    font-size: 1.45rem;
+    color: #321827;
+    line-height: 1.1;
+}
+
+.polaroid-num {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #9c6c7b;
+}
+
+/* Gallery Navigation Arrows */
+.gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--color-gold-champagne);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.gallery-nav-btn:hover {
+    background: rgba(56, 21, 62, 0.95);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.gallery-prev { left: 4px; }
+.gallery-next { right: 4px; }
+
+@media (max-width: 600px) {
+    .gallery-nav-btn { display: none; }
+}
+
+.gallery-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.gallery-counter {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--color-gold-rich);
+}
+
+.gallery-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.gallery-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(245, 212, 145, 0.25);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.gallery-dot.active {
+    width: 20px;
+    border-radius: 6px;
+    background: var(--color-gold-rich);
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL
+   ========================================================================== */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-lightbox[hidden] {
+    display: none;
+}
+
+.lightbox-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 5, 18, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.lightbox-dialog {
+    position: relative;
+    width: min(94vw, 560px);
+    max-height: 90dvh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: zoomLightbox 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes zoomLightbox {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.lightbox-close-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox-body {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-stage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-image-wrap {
+    position: relative;
+    width: 100%;
+    max-height: 70dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 70dvh;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: opacity 0.25s ease;
+}
+
+.lightbox-info {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.lightbox-counter {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--color-gold-rich);
+    text-transform: uppercase;
+}
+
+.lightbox-caption {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-ivory);
+    margin: 4px 0 0;
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(36, 14, 42, 0.7);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: var(--color-gold-champagne);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.lightbox-arrow-prev { left: -24px; }
+.lightbox-arrow-next { right: -24px; }
+
+.lightbox-arrow:hover {
+    background: rgba(56, 21, 62, 0.95);
+    transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 640px) {
+    .lightbox-arrow { display: none; }
+}
+
+/* ==========================================================================
+   PERSONAL BIRTHDAY LETTER ("FOR YOU, EUODIA")
+   ========================================================================== */
+
+.letter-popup-wrapper {
+    background: #fffdf9;
+    color: #381a28;
+}
+
+.envelope-paper.theme-romance {
+    background: #fffaf5;
+    border: 1px solid rgba(224, 173, 53, 0.25);
+}
+
+.letter-inner-content h2 {
+    font-family: var(--font-heading);
+    color: #3b1424;
+    letter-spacing: 0.04em;
+}
+
+#letter-popup-body {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #361a29;
+    white-space: pre-line;
+}
+
+/* ==========================================================================
+   FINAL CELEBRATION & REPLAY SCENE
+   ========================================================================== */
+
+.final-celebration-banner {
+    margin: 28px 0 16px;
+    padding: 24px 18px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(46, 18, 54, 0.8), rgba(24, 8, 28, 0.85));
+    border: 1px solid rgba(245, 212, 145, 0.3);
+    text-align: center;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+}
+
+.final-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-gold-champagne);
+    margin: 0 0 8px;
+    text-shadow: 0 0 16px rgba(245, 212, 145, 0.35);
+}
+
+.final-quote {
+    font-family: var(--font-script);
+    font-size: 1.65rem;
+    color: var(--color-blush-soft);
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.final-sender {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-rose-gold);
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+
+.final-replay-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #ffd76a, #e0ad35);
+    border: none;
+    color: #2b1704;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(224, 173, 53, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.final-replay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(224, 173, 53, 0.5);
+}
+
+/* ==========================================================================
+   MOBILE & VIEWPORT RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    .euodia-main-title {
+        font-size: 2.15rem;
+    }
+    
+    .countdown-grid {
+        gap: 6px;
+    }
+
+    .countdown-tile {
+        padding: 8px 2px;
+    }
+
+    .countdown-num {
+        font-size: 1.5rem;
+    }
+
+    .countdown-label {
+        font-size: 0.58rem;
+    }
+
+    .euodia-open-btn {
+        width: 100%;
+        min-height: 52px;
+        font-size: 0.92rem;
+    }
+
+    .polaroid-card {
+        flex: 0 0 240px;
+    }
+}
